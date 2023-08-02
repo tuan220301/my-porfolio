@@ -4,5 +4,5 @@ export const DefaultSysterm = {
     redText: '#9A0A0A',
     defaultText: '#000000',
     // heightBrowser: window.innerHeight,
-    marginTop: 100
+    // marginTop: 100
 };
