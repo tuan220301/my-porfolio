@@ -13,9 +13,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <ColorModeScript initialColorMode={theme.config.initialColorMode} />
             <ChakraProvider>
                 <NavbarComponent />
-                <Scrollbars style={{ width: '100%', height: '100vh' }}>
-                    {children}
-                </Scrollbars>
+                {children}
+                {/* <Scrollbars style={{ width: '100%', height: '100vh' }}>
+                </Scrollbars> */}
             </ChakraProvider>
         </>
     );

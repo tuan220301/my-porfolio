@@ -5,9 +5,9 @@ import Layout from '../Components/Base/Layout';
 
 const HomePage = ({ path }: any) => {
     return (
-        <Layout>
-            <HomeComponent />
-        </Layout>
+        // <Layout>
+        <HomeComponent />
+        // </Layout>
     );
 };
 export default HomePage;
