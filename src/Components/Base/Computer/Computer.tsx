@@ -16,7 +16,7 @@ interface ModelProps {
 }
 
 export const Computer: React.FC<ModelProps> = (props) => {
-    const { nodes, materials, animations }: any = useGLTF('/computer/scene.gltf');
+    const { nodes, materials, animations }: any = useGLTF('/gltf/computer/scene.gltf');
     const group: any = useRef();
     const [rotation, setRotation] = useState(0);
     const { actions } = useAnimations(animations, group);
@@ -88,4 +88,4 @@ export const Computer: React.FC<ModelProps> = (props) => {
     );
 };
 
-useGLTF.preload('/computer/scene.gltf');
+useGLTF.preload('/gltf/computer/scene.gltf');

@@ -10,11 +10,15 @@ Title: A Rainy Day
 import React, { useRef, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
+// import { GLTF } from "three";
+
+// import gft from '../../../gltf/raining_day/scene.gltf'
 interface ModelProps {
     // Add any specific props that this component requires
 }
 export const RainingDay: React.FC<ModelProps> = (props) => {
-    const { nodes, materials }: any = useGLTF('/raining_day/scene.gltf');
+    const { nodes, materials }: any = useGLTF('gltf/raining_day/scene.gltf');
+    // const gltf = useGLTF("/gltf/raining_day/scene.gltf");
     const [rotation, setRotation] = useState<any>([0, 0, 0]);
     const modelRef: any = useRef();
     useFrame((state: any, delta: any) => {
@@ -169,6 +173,7 @@ export const RainingDay: React.FC<ModelProps> = (props) => {
             <mesh geometry={nodes.Object_230.geometry} material={materials['Material.033']} position={[-6.854, 5.596, -1.849]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.219, 0.024, 0.219]} />
         </group>
     );
+
 };
 
-useGLTF.preload('/raining_day/scene.gltf');
+useGLTF.preload('/gltf/raining_day/scene.gltf');

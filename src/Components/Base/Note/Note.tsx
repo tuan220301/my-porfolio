@@ -16,7 +16,7 @@ interface ModelProps {
 }
 
 export const Note: React.FC<ModelProps> = (props) => {
-    const { nodes, materials }: any = useGLTF('/note/scene.gltf');
+    const { nodes, materials }: any = useGLTF('/gltf/note/scene.gltf');
     const [rotation, setRotation] = useState(0);
     useFrame(({ clock }) => {
         setRotation(clock.getElapsedTime() * 0.9);
@@ -39,4 +39,4 @@ export const Note: React.FC<ModelProps> = (props) => {
     );
 };
 
-useGLTF.preload('/note/scene.gltf');
+useGLTF.preload('/gltf/note/scene.gltf');

@@ -16,7 +16,7 @@ interface ModelProps {
 }
 
 export const Hanbiro: React.FC<ModelProps> = (props) => {
-    const { nodes, materials }: any = useGLTF('/hanbiro/scene.gltf');
+    const { nodes, materials }: any = useGLTF('/gltf/hanbiro/scene.gltf');
     const [rotation, setRotation] = useState(0);
     useFrame(({ clock }) => {
         setRotation(clock.getElapsedTime() * 0.9);
@@ -57,4 +57,4 @@ export const Hanbiro: React.FC<ModelProps> = (props) => {
     );
 };
 
-useGLTF.preload('/hanbiro/scene.gltf');
+useGLTF.preload('/gltf/hanbiro/scene.gltf');

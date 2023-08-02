@@ -14,7 +14,7 @@ interface ModelProps {
     // Add any specific props that this component requires
 }
 export const ShippingBus: React.FC<ModelProps> = (props) => {
-    const { nodes, materials }: any = useGLTF('/bus/scene.gltf');
+    const { nodes, materials }: any = useGLTF('/gltf/bus/scene.gltf');
     const [rotation, setRotation] = useState(0);
     useFrame(({ clock }) => {
         setRotation(clock.getElapsedTime() * 0.9);
@@ -49,4 +49,4 @@ export const ShippingBus: React.FC<ModelProps> = (props) => {
     );
 };
 
-useGLTF.preload('/bus/scene.gltf');
+useGLTF.preload('/gltf/bus/scene.gltf');
