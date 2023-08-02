@@ -9,9 +9,9 @@ import HomePage from "./Home";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Box style={{ height: '100vh' }}>
-      <Layout>
-        <HomePage />
-      </Layout>
+      {/* <Layout> */}
+      <HomePage />
+      {/* </Layout> */}
     </Box>
   );
 };
