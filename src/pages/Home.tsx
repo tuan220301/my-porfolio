@@ -1,10 +1,13 @@
-import React from "react";
+import React from 'react';
+import HomeComponent from '../Components/Home';
+import { Box } from '@chakra-ui/react';
+import Layout from '../Components/Base/Layout';
 
-const HomePage = () => {
+const HomePage = ({ path }: any) => {
     return (
-        <div>
-            Home
-        </div>
+        <Layout>
+            <HomeComponent />
+        </Layout>
     );
 };
 export default HomePage;

@@ -1,17 +1,20 @@
 import * as React from "react";
-import { Link, type HeadFC, type PageProps } from "gatsby";
+import type { PageProps } from "gatsby";
+import Layout from "../Components/Base/Layout";
 import NavbarComponent from "../Components/Base/Navbar";
-
+import { Box } from "@chakra-ui/react";
+import HomePage from "./Home";
 
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <div>
-      <NavbarComponent />
-    </div>
+    <Box style={{ height: '100vh' }}>
+      <Layout>
+        <HomePage />
+      </Layout>
+    </Box>
   );
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page hello</title>;
