@@ -11,12 +11,12 @@ const App = () => {
             <ColorModeScript initialColorMode={theme.config.initialColorMode} />
             <ChakraProvider>
                 <NavbarComponent />
-                <Scrollbars style={{ width: '100%', height: '100vh' }}>
-                    <main>
-                        <HomeComponent />
-                    </main>
-                </Scrollbars>
-            </ChakraProvider>
+                {/* <Scrollbars style={{ width: '100%', height: '100vh' }}>
+                    <main> */}
+                <HomeComponent />
+                {/* </main> */}
+                {/* </Scrollbars> */}
+            </ChakraProvider >
         </>
     );
 };
