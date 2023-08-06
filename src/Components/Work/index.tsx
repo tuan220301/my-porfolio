@@ -1,11 +1,15 @@
-import { Box, Grid, GridItem, Text, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Icon, Text, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import ShippingBusComponent from "../Base/Shipping_bus";
 import TruckComponent from "../Base/Truck";
 import HanbiroComponent from "../Base/Hanbiro";
 import NoteComponent from "../Base/Note";
 import ComputerComponent from "../Base/Computer";
-import SkillComponent from "./skill";
+import { BiLogoReact, BiLogoGraphql, BiLogoAngular, BiLogoMongodb } from 'react-icons/bi';
+import { TbBrandReactNative, TbBrandTypescript, TbBrandXamarin } from 'react-icons/tb';
+import { SiReactquery, SiGooglemaps } from 'react-icons/si';
+import { DiSqllite } from 'react-icons/di';
+import { NearIcon } from "../Base/NearIcon";
 
 const WorkComponent = () => {
     // console.log('workpage');
@@ -39,13 +43,18 @@ const WorkComponent = () => {
         }
     }, []);
     // console.log('ismobile: ', isMobile);
+    const iconList = {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 3
+    };
     return (
         <Box style={{
             display: 'flex',
-            flexDirection: is1200pxOrLess ? 'column' : 'row',
-            width: 'auto%',
+            // flexDirection: is1200pxOrLess ? 'column' : 'row',
+            width: '100%',
             justifyContent: 'center',
-            height: isMobile ? 'fit-content' : 'auto',
+            height: isMobile ? 'fit-content' : '100vh',
             paddingTop: '56px',
             background: 'linear-gradient(180deg, rgba(255, 231, 205, 1) 0%, #121120 100%)',
             // border: '1px solid black',
@@ -53,14 +62,13 @@ const WorkComponent = () => {
             <Box width={'100%'} padding={5} height={'100%'}
             // border={'1px solid black'}
             >
-                {!is1200pxOrLess && <SkillComponent />}
-                <Text style={{
+                {/* <Text style={{
                     fontWeight: 'bold',
                     fontSize: '24px',
                     textAlign: 'center',
                     marginTop: is1200pxOrLess ? 0 : 10,
                     marginBottom: 10
-                }}>My Projects</Text>
+                }}>My Projects</Text> */}
                 <Grid
                     templateColumns={gridColumnTemplate}
                     templateRows={gridRowTemplate}
@@ -83,12 +91,20 @@ const WorkComponent = () => {
                     >
                         <Box style={{
                             width: isMobile ? '100%' : '450px',
-                            height: isMobile ? 'fit-content' : '300px',
+                            height: '300px',
                             // border: '1px solid black'
                         }}>
                             <ShippingBusComponent />
                         </Box>
                         <Text style={textStyle}>Logistic Application</Text>
+                        <Box style={iconList as any}>
+                            <Icon as={BiLogoReact} w={9} h={9} />
+                            <Icon as={TbBrandReactNative} w={8} h={8} />
+                            <Icon as={SiReactquery} w={8} h={8} />
+                            <Icon as={BiLogoGraphql} w={8} h={8} />
+                            <Icon as={TbBrandTypescript} w={8} h={8} />
+                            <Icon as={SiGooglemaps} w={8} h={8} />
+                        </Box>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
                         width={isMobile ? '95%' : '500px'}
@@ -111,6 +127,11 @@ const WorkComponent = () => {
                             <TruckComponent />
                         </Box>
                         <Text style={textStyle}>Part time at Logisoft</Text>
+                        <Box style={iconList as any}>
+                            <Icon as={BiLogoAngular} w={9} h={9} />
+                            <Icon as={SiGooglemaps} w={8} h={8} />
+                            <Icon as={TbBrandTypescript} w={8} h={8} />
+                        </Box>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
                         width={isMobile ? '95%' : '500px'}
@@ -133,6 +154,12 @@ const WorkComponent = () => {
                             <HanbiroComponent />
                         </Box>
                         <Text style={textStyle}>Intern at Hanbiro</Text>
+                        <Box style={iconList as any}>
+                            <Icon as={BiLogoReact} w={9} h={9} />
+                            <Icon as={SiReactquery} w={8} h={8} />
+                            <Icon as={BiLogoGraphql} w={8} h={8} />
+                            <Icon as={TbBrandTypescript} w={8} h={8} />
+                        </Box>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
                         width={isMobile ? '95%' : '500px'}
@@ -155,6 +182,11 @@ const WorkComponent = () => {
                             <NoteComponent />
                         </Box>
                         <Text style={textStyle}>Todo List with React and Mongoose</Text>
+                        <Box style={iconList as any}>
+                            <Icon as={BiLogoReact} w={9} h={9} />
+                            <Icon as={BiLogoMongodb} w={8} h={8} />
+                            <Icon as={SiReactquery} w={8} h={8} />
+                        </Box>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
                         width={isMobile ? '95%' : '500px'}
@@ -177,6 +209,10 @@ const WorkComponent = () => {
                             <NoteComponent />
                         </Box>
                         <Text style={textStyle}>Todo List with Xamarin and SQLite</Text>
+                        <Box style={iconList as any}>
+                            <Icon as={TbBrandXamarin} w={9} h={9} />
+                            <Icon as={DiSqllite} w={8} h={8} />
+                        </Box>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
                         width={isMobile ? '95%' : '500px'}
@@ -199,6 +235,10 @@ const WorkComponent = () => {
                             <ComputerComponent />
                         </Box>
                         <Text style={textStyle}>WITU social with Near and React</Text>
+                        <Box style={iconList as any}>
+                            <Icon as={BiLogoReact} w={9} h={9} />
+                            <NearIcon w={9} h={9} />
+                        </Box>
                     </GridItem>
                 </Grid>
             </Box>
