@@ -34,9 +34,9 @@ const NavbarComponent = () => {
                 alignItems: 'center',
                 paddingRight: 10
             }}>
-                <Link to='/'>Home</Link>
-                <Link to='/Work'>Work</Link>
-                <Link to='/Contact'>Contact</Link>
+                <Link to='/' activeClassName="active">Home</Link>
+                <Link to='/Work' activeClassName="active">Work</Link>
+                <Link to='/Contact' activeClassName="active">Contact</Link>
             </Box>
         </nav>
     );

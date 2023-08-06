@@ -1,5 +1,5 @@
 import { Box, Grid, GridItem, Text, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ShippingBusComponent from "../Base/Shipping_bus";
 import TruckComponent from "../Base/Truck";
 import HanbiroComponent from "../Base/Hanbiro";
@@ -17,17 +17,40 @@ const WorkComponent = () => {
         fontWeight: 'bold'
     };
     const [is1200pxOrLess] = useMediaQuery('(max-width: 1250px)');
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkIsMobile = () => {
+            const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            setIsMobile(isMobileDevice);
+        };
+
+        checkIsMobile(); // Check on initial render
+
+        // Make sure this code only runs in the client-side environment
+        if (typeof window !== "undefined") {
+            // Listen for resize events to update the isMobile state
+            window.addEventListener("resize", checkIsMobile);
+
+            // Clean up the event listener on component unmount
+            return () => {
+                window.removeEventListener("resize", checkIsMobile);
+            };
+        }
+    }, []);
+    // console.log('ismobile: ', isMobile);
     return (
         <Box style={{
             display: 'flex',
-            width: '100%',
+            flexDirection: is1200pxOrLess ? 'column' : 'row',
+            width: 'auto%',
             justifyContent: 'center',
-            height: is1200pxOrLess ? '100%' : 'fit-content',
+            height: isMobile ? 'fit-content' : 'auto',
             paddingTop: '56px',
             background: 'linear-gradient(180deg, rgba(255, 231, 205, 1) 0%, #121120 100%)',
-            border: '1px solid black',
+            // border: '1px solid black',
         }}>
-            <Box width={'97%'} padding={5} height={'100%'}
+            <Box width={'100%'} padding={5} height={'100%'}
             // border={'1px solid black'}
             >
                 {!is1200pxOrLess && <SkillComponent />}
@@ -46,7 +69,7 @@ const WorkComponent = () => {
                 >
                     {/* Place your grid items here */}
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
-                        width={'500px'}
+                        width={isMobile ? '95%' : '500px'}
                         height={'400px'}
                         display={"flex"}
                         flexDirection={'column'}
@@ -59,8 +82,8 @@ const WorkComponent = () => {
                         }}
                     >
                         <Box style={{
-                            width: '450px',
-                            height: '300px',
+                            width: isMobile ? '100%' : '450px',
+                            height: isMobile ? 'fit-content' : '300px',
                             // border: '1px solid black'
                         }}>
                             <ShippingBusComponent />
@@ -68,7 +91,7 @@ const WorkComponent = () => {
                         <Text style={textStyle}>Logistic Application</Text>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
-                        width={'500px'}
+                        width={isMobile ? '95%' : '500px'}
                         height={'400px'}
                         display={"flex"}
                         flexDirection={'column'}
@@ -81,8 +104,8 @@ const WorkComponent = () => {
                         }}
                     >
                         <Box style={{
-                            width: '450px',
-                            height: '300px',
+                            width: isMobile ? '100%' : '450px',
+                            height: isMobile ? 'fit-content' : '300px',
                             // border: '1px solid black'
                         }}>
                             <TruckComponent />
@@ -90,7 +113,7 @@ const WorkComponent = () => {
                         <Text style={textStyle}>Part time at Logisoft</Text>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
-                        width={'500px'}
+                        width={isMobile ? '95%' : '500px'}
                         height={'400px'}
                         display={"flex"}
                         flexDirection={'column'}
@@ -103,7 +126,7 @@ const WorkComponent = () => {
                         }}
                     >
                         <Box style={{
-                            width: '450px',
+                            width: isMobile ? '100%' : '450px',
                             height: '300px',
                             // border: '1px solid black'
                         }}>
@@ -112,7 +135,7 @@ const WorkComponent = () => {
                         <Text style={textStyle}>Intern at Hanbiro</Text>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
-                        width={'500px'}
+                        width={isMobile ? '95%' : '500px'}
                         height={'400px'}
                         display={"flex"}
                         flexDirection={'column'}
@@ -125,7 +148,7 @@ const WorkComponent = () => {
                         }}
                     >
                         <Box style={{
-                            width: '450px',
+                            width: isMobile ? '100%' : '450px',
                             height: '300px',
                             // border: '1px solid black'
                         }}>
@@ -134,7 +157,7 @@ const WorkComponent = () => {
                         <Text style={textStyle}>Todo List with React and Mongoose</Text>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
-                        width={'500px'}
+                        width={isMobile ? '95%' : '500px'}
                         height={'400px'}
                         display={"flex"}
                         flexDirection={'column'}
@@ -147,7 +170,7 @@ const WorkComponent = () => {
                         }}
                     >
                         <Box style={{
-                            width: '450px',
+                            width: isMobile ? '100%' : '450px',
                             height: '300px',
                             // border: '1px solid black'
                         }}>
@@ -156,7 +179,7 @@ const WorkComponent = () => {
                         <Text style={textStyle}>Todo List with Xamarin and SQLite</Text>
                     </GridItem>
                     <GridItem bg={'rgba(130, 129, 146, 0.2)'}
-                        width={'500px'}
+                        width={isMobile ? '95%' : '500px'}
                         height={'400px'}
                         display={"flex"}
                         flexDirection={'column'}
@@ -169,7 +192,7 @@ const WorkComponent = () => {
                         }}
                     >
                         <Box style={{
-                            width: '450px',
+                            width: isMobile ? '100%' : '450px',
                             height: '300px',
                             // border: '1px solid black'
                         }}>

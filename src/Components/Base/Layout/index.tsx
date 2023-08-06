@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <ChakraProvider>
                 <NavbarComponent />
                 <Scrollbars style={{ width: '100%', height: '100vh' }}>
-                    {children}
+                    <main>{children}</main>
                 </Scrollbars>
             </ChakraProvider>
         </>
