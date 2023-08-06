@@ -54,21 +54,21 @@ const WorkComponent = () => {
             // flexDirection: is1200pxOrLess ? 'column' : 'row',
             width: '100%',
             justifyContent: 'center',
-            height: isMobile ? 'fit-content' : '100vh',
-            paddingTop: '56px',
+            height: '100%',
+            paddingTop: '55px',
             background: 'linear-gradient(180deg, rgba(255, 231, 205, 1) 0%, #121120 100%)',
             // border: '1px solid black',
         }}>
             <Box width={'100%'} padding={5} height={'100%'}
             // border={'1px solid black'}
             >
-                {/* <Text style={{
+                <Text style={{
                     fontWeight: 'bold',
                     fontSize: '24px',
                     textAlign: 'center',
                     marginTop: is1200pxOrLess ? 0 : 10,
-                    marginBottom: 10
-                }}>My Projects</Text> */}
+                    marginBottom: 15
+                }}>My Projects</Text>
                 <Grid
                     templateColumns={gridColumnTemplate}
                     templateRows={gridRowTemplate}
