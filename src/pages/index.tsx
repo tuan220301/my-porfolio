@@ -5,15 +5,16 @@ import NavbarComponent from "../Components/Base/Navbar";
 import { Box } from "@chakra-ui/react";
 import HomePage from "./Home";
 import Scrollbars from "react-custom-scrollbars-2";
+import HomeComponent from "../Components/Home";
 
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    // <Layout>
-    <Scrollbars style={{ width: '100%', height: '100vh' }}>
-      < HomePage />
-    </Scrollbars>
-    // </Layout>
+    // <Box>
+    <Layout>
+      < HomeComponent />
+    </Layout>
+    // </Box>
   );
 };
 
