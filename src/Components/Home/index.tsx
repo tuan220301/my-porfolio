@@ -17,7 +17,7 @@ const HomeComponent = () => {
     return (
         <Box style={{
             display: 'flex',
-            width: '100%',
+            // width: '100%',
             justifyContent: 'center',
             height: '100vh',
             background: 'linear-gradient(180deg, rgba(255, 231, 205, 1) 0%, #121120 100%)',
